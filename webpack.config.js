@@ -80,51 +80,10 @@ config.module.rules.push({
 });
 config.plugins.push(extractStyles);
 
-// config.module.rules.push({
-//     test: /\.(sass|scss)$/,
-//     loader: extractStyles.extract({
-//         fallback: 'style-loader',
-//         use: [
-//             {
-//                 loader: 'css-loader',
-//                 options: {
-//                     sourceMap: project.sourcemaps,
-//                     minimize: {
-//                         autoprefixer: {
-//                             add: true,
-//                             remove: true,
-//                             browsers: ['last 2 versions'],
-//                         },
-//                         discardComments: {
-//                             removeAll : true,
-//                         },
-//                         discardUnused: false,
-//                         mergeIdents: false,
-//                         reduceIdents: false,
-//                         safe: true,
-//                         sourcemap: project.sourcemaps,
-//                     },
-//                 },
-//             },
-//             {
-//                 loader: 'sass-loader',
-//                 options: {
-//                     sourceMap: project.sourcemaps,
-//                     includePaths: [
-//                         inProjectSrc('styles'),
-//                     ],
-//                 },
-//             }
-//         ],
-//     })
-// });
-// config.plugins.push(extractStyles);
-
-
 // Images
 // ------------------------------------
 config.module.rules.push({
-    test    : /\.(png|jpg|gif)$/,
+    test    : /\.(png|jpg|gif|svg)$/,
     loader  : 'url-loader',
     options : {
         limit : 8192,
